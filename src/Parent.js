@@ -5,11 +5,13 @@ import Child from "./Child";
 function Parent() {
   const randomColor = getRandomColor();
   const [color, setColor] = useState(randomColor);
+  const [childrenColor, setChildrenColor] = useState("white");
+
 
   return (
     <div className="parent" style={{ backgroundColor: color }}>
-      <Child />
-      <Child />
+      <Child parentColor={color} setParentColor={setColor} childrenColor={childrenColor} setChildrenColor={setChildrenColor} />
+      <Child parentColor={color} setParentColor={setColor} childrenColor={childrenColor} setChildrenColor={setChildrenColor} />
     </div>
   );
 }
